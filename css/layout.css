@@ -200,15 +200,15 @@ body {
     background: var(--surface-footer);
     backdrop-filter: blur(10px);
     /* ✅ 确保页脚内容不延伸到侧边栏区域 */
-    margin-left: 280px; /* 与侧边栏宽度一致 */
+    margin-left: 70px; /* 与窄侧边栏宽度一致 */
 }
 
 /* 使用伪元素扩展背景到屏幕边界 */
 .footer::after {
     content: '';
     position: absolute;
-    left: -280px;  /* ✅ 只扩展到侧边栏右侧，不覆盖侧边栏 */
-    right: 0;  /* ✅ 修正：不需要负值，直接到右边界 */
+    left: -70px;  /* ✅ 扩展到侧边栏右侧 */
+    right: 0;
     top: 0;
     bottom: 0;
     background: inherit;
@@ -220,8 +220,8 @@ body {
 .article-footer::after {
     content: '';
     position: absolute;
-    left: -280px;  /* ✅ 只扩展到侧边栏右侧，不覆盖侧边栏 */
-    right: 0;  /* ✅ 修正：不需要负值，直接到右边界 */
+    left: -70px;  /* ✅ 扩展到侧边栏右侧 */
+    right: 0;
     top: 0;
     bottom: -4vh;  /* 向下延伸填充到视口底部 */
     background: inherit;
